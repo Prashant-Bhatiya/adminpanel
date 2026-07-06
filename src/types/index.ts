@@ -12,7 +12,9 @@ export interface AuthUser {
   id: string;
   name: string;
   email: string;
-  role: string;
+  mobile: number;
+  profileImage?: string;
+  role?: string;
 }
 
 export interface NavItem {
@@ -20,3 +22,4 @@ export interface NavItem {
   path: string;
   icon: string;
 }
+

@@ -8,8 +8,11 @@ import AdminLayout from "@/components/layout/AdminLayout";
 import Login from "@/pages/Login";
 import Dashboard from "@/pages/Dashboard";
 import Users from "@/pages/Users";
-import Analytics from "@/pages/Analytics";
-import Products from "@/pages/Products";
+import KycReview from "@/pages/KycReview";
+import Matrimonial from "@/pages/Matrimonial";
+import Reports from "@/pages/Reports";
+import Broadcast from "@/pages/Broadcast";
+import FamilyTree from "@/pages/FamilyTree";
 import Settings from "@/pages/Settings";
 import NotFound from "@/pages/NotFound";
 
@@ -30,8 +33,11 @@ export default function App() {
             >
               <Route path="/" element={<Dashboard />} />
               <Route path="/users" element={<Users />} />
-              <Route path="/analytics" element={<Analytics />} />
-              <Route path="/products" element={<Products />} />
+              <Route path="/kyc" element={<KycReview />} />
+              <Route path="/matrimonial" element={<Matrimonial />} />
+              <Route path="/reports" element={<Reports />} />
+              <Route path="/broadcast" element={<Broadcast />} />
+              <Route path="/family-tree" element={<FamilyTree />} />
               <Route path="/settings" element={<Settings />} />
             </Route>
 

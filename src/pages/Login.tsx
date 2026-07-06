@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Navigate, useLocation, useNavigate } from "react-router-dom";
-import { Layers, Mail, Lock, Eye, EyeOff, AlertCircle } from "lucide-react";
+import { Layers, Phone, Lock, Eye, EyeOff, AlertCircle } from "lucide-react";
 import { useAuth } from "@/context/AuthContext";
 import Button from "@/components/ui/Button";
 
@@ -9,7 +9,7 @@ export default function Login() {
   const navigate = useNavigate();
   const location = useLocation();
 
-  const [email, setEmail] = useState("admin@example.com");
+  const [mobile, setMobile] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -24,7 +24,7 @@ export default function Login() {
     e.preventDefault();
     setError(null);
     setIsLoading(true);
-    const result = await login(email, password);
+    const result = await login(mobile, password);
     setIsLoading(false);
 
     if (result.ok) {
@@ -58,18 +58,18 @@ export default function Login() {
             )}
 
             <div>
-              <label htmlFor="email" className="mb-1.5 block text-sm font-medium text-text">
-                Email
+              <label htmlFor="mobile" className="mb-1.5 block text-sm font-medium text-text">
+                Mobile Number
               </label>
               <div className="flex items-center gap-2 rounded-xl border border-border bg-surface-alt px-3 py-2.5 focus-within:border-primary">
-                <Mail size={16} className="text-text-muted" />
+                <Phone size={16} className="text-text-muted" />
                 <input
-                  id="email"
-                  type="email"
+                  id="mobile"
+                  type="text"
                   required
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  placeholder="you@example.com"
+                  value={mobile}
+                  onChange={(e) => setMobile(e.target.value)}
+                  placeholder="e.g. 9876543210"
                   className="w-full bg-transparent text-sm text-text outline-none placeholder:text-text-muted"
                 />
               </div>
@@ -80,9 +80,6 @@ export default function Login() {
                 <label htmlFor="password" className="block text-sm font-medium text-text">
                   Password
                 </label>
-                <button type="button" className="text-xs font-medium text-primary hover:underline">
-                  Forgot password?
-                </button>
               </div>
               <div className="flex items-center gap-2 rounded-xl border border-border bg-surface-alt px-3 py-2.5 focus-within:border-primary">
                 <Lock size={16} className="text-text-muted" />
@@ -112,7 +109,7 @@ export default function Login() {
           </form>
 
           <p className="mt-5 rounded-xl bg-surface-alt px-3 py-2.5 text-center text-xs text-text-muted">
-            Demo credentials — <span className="font-medium text-text">admin@example.com</span> /{" "}
+            Demo API Credentials — <span className="font-medium text-text">9876543210</span> /{" "}
             <span className="font-medium text-text">admin123</span>
           </p>
         </div>

@@ -1,11 +1,13 @@
-import React from "react";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import {
   LayoutGrid,
   Users,
+  FileCheck,
+  Heart,
+  AlertTriangle,
+  Megaphone,
+  GitFork,
   Settings,
-  BarChart3,
-  Boxes,
   ChevronsLeft,
   ChevronsRight,
   Layers,
@@ -16,8 +18,11 @@ import { useTheme } from "@/context/ThemeContext";
 const navItems = [
   { label: "Dashboard", path: "/", icon: LayoutGrid },
   { label: "Users", path: "/users", icon: Users },
-  { label: "Analytics", path: "/analytics", icon: BarChart3 },
-  { label: "Products", path: "/products", icon: Boxes },
+  { label: "KYC Review", path: "/kyc", icon: FileCheck },
+  { label: "Matrimonial", path: "/matrimonial", icon: Heart },
+  { label: "Reports", path: "/reports", icon: AlertTriangle },
+  { label: "Broadcast", path: "/broadcast", icon: Megaphone },
+  { label: "Family Tree", path: "/family-tree", icon: GitFork },
   { label: "Settings", path: "/settings", icon: Settings },
 ];
 
@@ -32,16 +37,19 @@ export default function Sidebar() {
       )}
     >
       {/* Brand */}
-      <div className="flex h-16 items-center gap-2.5 border-b border-sidebar-border px-5">
+      <Link
+        to="/"
+        className="flex h-16 items-center gap-2.5 border-b border-sidebar-border px-5 transition-opacity hover:opacity-90"
+      >
         <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-primary text-white">
           <Layers size={18} />
         </div>
         {!sidebarCollapsed && (
           <span className="font-display text-[15px] font-bold tracking-tight text-sidebar-text">
-            Northgate
+            Northgate Admin
           </span>
         )}
-      </div>
+      </Link>
 
       {/* Nav */}
       <nav className="flex-1 space-y-1 overflow-y-auto px-3 py-4">
