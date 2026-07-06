@@ -1,0 +1,54 @@
+/* =========================================================================
+   THEME TOKENS
+   -------------------------------------------------------------------------
+   This is the ONLY file you need to touch to change the look of the app.
+   Every color is written as "R G B" (space separated, no commas, no #)
+   because Tailwind builds them with rgb(var(--x) / <alpha-value>) so
+   opacity utilities like bg-primary/10 keep working.
+
+   Tip: paste a hex color into https://rgbcolorcode.com or just convert
+   #RRGGBB to R G B decimal and drop it in below.
+   ========================================================================= */
+
+:root {
+  /* ---- Brand ---- */
+  --color-primary: 31 111 99;         /* #1F6F63 deep teal */
+  --color-primary-hover: 23 86 76;    /* #17564C */
+  --color-primary-light: 228 241 239; /* #E4F1EF */
+
+  --color-accent: 232 163 61;         /* #E8A33D warm amber */
+  --color-accent-light: 251 235 209;  /* #FBEBD1 */
+
+  /* ---- Feedback ---- */
+  --color-success: 46 158 109;  /* #2E9E6D */
+  --color-warning: 217 119 6;   /* #D97706 */
+  --color-danger: 214 69 69;    /* #D64545 */
+
+  /* ---- Surfaces (light mode) ---- */
+  --color-bg: 247 247 245;         /* #F7F7F5 app background */
+  --color-surface: 255 255 255;   /* #FFFFFF cards / panels */
+  --color-surface-alt: 241 241 238; /* #F1F1EE subtle panels, table stripes */
+  --color-border: 228 228 224;    /* #E4E4E0 */
+  --color-text: 27 29 31;         /* #1B1D1F */
+  --color-text-muted: 107 111 118;/* #6B6F76 */
+
+  /* ---- Sidebar (same across light/dark by design) ---- */
+  --color-sidebar-bg: 20 24 31;          /* #14181F */
+  --color-sidebar-text: 231 233 236;     /* #E7E9EC */
+  --color-sidebar-text-muted: 138 147 163;/* #8A93A3 */
+  --color-sidebar-active: 31 42 56;      /* #1F2A38 */
+  --color-sidebar-border: 35 40 48;      /* #232830 */
+}
+
+/* ---- Surfaces (dark mode) — toggled by adding class="dark" to <html> ---- */
+.dark {
+  --color-bg: 14 17 22;            /* #0E1116 */
+  --color-surface: 22 26 33;       /* #161A21 */
+  --color-surface-alt: 28 33 43;   /* #1C212B */
+  --color-border: 38 44 54;        /* #262C36 */
+  --color-text: 233 234 236;       /* #E9EAEC */
+  --color-text-muted: 145 152 165; /* #9198A5 */
+
+  --color-primary-light: 22 48 43; /* #16302B */
+  --color-accent-light: 54 44 24;  /* #362C18 */
+}
