@@ -48,7 +48,7 @@ export default function Login() {
           </div>
         </div>
 
-        <div className="rounded-2xl border border-border bg-surface p-6 shadow-panel">
+        <div className="rounded-2xl border border-border bg-surface p-5 shadow-panel sm:p-6">
           <form onSubmit={handleSubmit} className="space-y-4">
             {error && (
               <div className="flex items-center gap-2 rounded-xl bg-danger/10 px-3 py-2.5 text-sm text-danger">

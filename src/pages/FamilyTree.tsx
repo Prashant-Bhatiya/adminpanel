@@ -142,7 +142,7 @@ export default function FamilyTree() {
             Visualize relationships, administer lineage database trees, and verify family links.
           </p>
         </div>
-        <div className="flex gap-2">
+        <div className="grid grid-cols-1 gap-2 sm:flex">
           <Button variant="secondary" size="sm">
             <Download size={14} className="mr-1.5" /> Export DB
           </Button>
@@ -196,9 +196,9 @@ export default function FamilyTree() {
       </div>
 
       {/* Main Grid */}
-      <div className="grid grid-cols-1 gap-6 lg:grid-cols-12">
+      <div className="grid grid-cols-1 gap-5 xl:grid-cols-12">
         {/* Left Side: Search & Visualizer */}
-        <div className="lg:col-span-8 space-y-4">
+        <div className="xl:col-span-8 space-y-4">
           <Card className="min-h-[500px] flex flex-col gap-4">
             {/* Search Box */}
             <div className="relative">
@@ -237,13 +237,13 @@ export default function FamilyTree() {
             </div>
 
             {/* Tree Interactive Display */}
-            <div className="flex-1 border border-border rounded-2xl bg-surface-alt/25 p-6 flex flex-col items-center justify-center min-h-[400px] relative overflow-hidden">
+            <div className="flex-1 border border-border rounded-2xl bg-surface-alt/25 p-3 sm:p-6 flex flex-col items-center justify-center min-h-[400px] relative overflow-x-auto overflow-y-hidden">
               <span className="absolute top-3 left-4 text-[10px] font-bold text-text-muted uppercase flex items-center gap-1">
                 <Info size={12} /> Click nodes to view relationship profile
               </span>
 
               {/* Visual SVG Lines & Nodes Wrapper */}
-              <div className="flex flex-col items-center gap-8 w-full max-w-2xl text-center z-10">
+              <div className="flex min-w-[640px] flex-col items-center gap-8 w-full max-w-2xl text-center z-10">
                 {/* Root node */}
                 <button
                   onClick={() => setSelectedNode(MOCK_TREE_ROOT)}
@@ -304,7 +304,7 @@ export default function FamilyTree() {
         </div>
 
         {/* Right Side: Selected Node Details */}
-        <div className="lg:col-span-4">
+        <div className="xl:col-span-4">
           <Card className="h-full space-y-5">
             <h3 className="text-sm font-bold text-text mb-2 uppercase tracking-wider flex items-center gap-1.5">
               <Info size={16} className="text-primary" /> Node Information

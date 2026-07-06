@@ -146,8 +146,8 @@ export default function Dashboard() {
         </div>
 
         {/* Charts & Tables Skeleton */}
-        <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
-          <div className="lg:col-span-2 h-[350px] bg-surface border border-border rounded-2xl" />
+        <div className="grid grid-cols-1 gap-5 xl:grid-cols-3">
+          <div className="xl:col-span-2 h-[350px] bg-surface border border-border rounded-2xl" />
           <div className="h-[350px] bg-surface border border-border rounded-2xl" />
         </div>
       </div>
@@ -164,7 +164,7 @@ export default function Dashboard() {
             Here's a live summary of the Northgate workspace activities.
           </p>
         </div>
-        <span className="flex items-center gap-1.5 text-xs text-text-muted bg-surface border border-border px-3 py-1.5 rounded-xl w-max">
+        <span className="flex items-center gap-1.5 text-xs text-text-muted bg-surface border border-border px-3 py-1.5 rounded-xl w-full sm:w-max">
           <Calendar size={14} /> Auto-refresh active (45s)
         </span>
       </div>
@@ -208,9 +208,9 @@ export default function Dashboard() {
       </div>
 
       {/* Chart & Summary Row */}
-      <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
+      <div className="grid grid-cols-1 gap-5 xl:grid-cols-3">
         {/* Growth line chart */}
-        <Card className="lg:col-span-2">
+        <Card className="xl:col-span-2">
           <div className="mb-4">
             <h3 className="text-sm font-bold text-text uppercase tracking-wider flex items-center gap-1.5">
               <LayoutGrid size={15} className="text-primary" /> User Sign-ups Trend
@@ -306,14 +306,14 @@ export default function Dashboard() {
 
       {/* Recent Users Table */}
       <Card padded={false}>
-        <div className="flex items-center justify-between px-5 pt-5 pb-3">
+        <div className="flex flex-col gap-2 px-4 pt-4 pb-3 sm:flex-row sm:items-center sm:justify-between sm:px-5 sm:pt-5">
           <div>
             <h3 className="text-sm font-bold text-text uppercase tracking-wider">Recently Registered Users</h3>
             <p className="text-xs text-text-muted">Latest five community signups awaiting onboarding</p>
           </div>
         </div>
         <div className="overflow-x-auto">
-          <table className="w-full text-left text-sm">
+          <table className="min-w-[720px] w-full text-left text-sm">
             <thead>
               <tr className="border-y border-border text-xs text-text-muted bg-surface-alt/50">
                 <th className="px-5 py-3 font-semibold">User Details</th>

@@ -191,9 +191,9 @@ export default function Settings() {
         <p className="mt-1 text-sm text-text-muted">Manage your profile, change credentials, register admins, and adjust appearance.</p>
       </div>
 
-      <div className="grid grid-cols-1 gap-6 lg:grid-cols-12">
+      <div className="grid grid-cols-1 gap-5 xl:grid-cols-12">
         {/* Left Side: Profile & Passwords */}
-        <div className="lg:col-span-7 space-y-6">
+        <div className="xl:col-span-7 space-y-5 sm:space-y-6">
           
           {/* Profile Edit Card */}
           <Card>
@@ -306,7 +306,7 @@ export default function Settings() {
         </div>
 
         {/* Right Side: Add Admin & Theme Customization */}
-        <div className="lg:col-span-5 space-y-6">
+        <div className="xl:col-span-5 space-y-5 sm:space-y-6">
 
           {/* Add Admin Account Card */}
           <Card>
@@ -377,7 +377,7 @@ export default function Settings() {
           {/* Appearance Card */}
           <Card>
             <h3 className="mb-4 text-sm font-semibold text-text">Appearance Mode</h3>
-            <div className="flex items-center justify-between rounded-xl border border-border bg-surface-alt px-4 py-3">
+            <div className="flex flex-col gap-3 rounded-xl border border-border bg-surface-alt px-4 py-3 sm:flex-row sm:items-center sm:justify-between">
               <div className="flex items-center gap-3">
                 <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-surface text-text-muted">
                   {mode === "light" ? <Sun size={16} /> : <Moon size={16} />}
@@ -404,7 +404,7 @@ export default function Settings() {
 
           {/* Theme colors Card */}
           <Card>
-            <div className="mb-4 flex items-center justify-between">
+            <div className="mb-4 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
               <div>
                 <h3 className="text-sm font-semibold text-text">Theme Colors</h3>
                 <p className="text-xs text-text-muted">

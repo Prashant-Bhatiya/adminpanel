@@ -227,7 +227,7 @@ export default function Users() {
         </div>
       )}
 
-      <Card padded={false}>
+      <Card padded={false} className="overflow-hidden">
         {/* Search & Filters */}
         <div className="space-y-4 border-b border-border p-4">
           <form onSubmit={handleSearchSubmit} className="flex flex-col gap-3 sm:flex-row">
@@ -244,8 +244,8 @@ export default function Users() {
           </form>
 
           {/* Quick Filters */}
-          <div className="flex flex-wrap gap-4 text-sm">
-            <div className="flex items-center gap-2">
+          <div className="grid gap-3 text-sm sm:grid-cols-2 xl:grid-cols-3">
+            <div className="flex min-w-0 items-center gap-2">
               <span className="text-text-muted font-medium">KYC:</span>
               <select
                 value={kycStatus}
@@ -253,7 +253,7 @@ export default function Users() {
                   setKycStatus(e.target.value);
                   setPage(1);
                 }}
-                className="rounded-lg border border-border bg-surface px-2.5 py-1 text-text focus:border-primary focus:outline-none"
+                className="min-w-0 flex-1 rounded-lg border border-border bg-surface px-2.5 py-1 text-text focus:border-primary focus:outline-none"
               >
                 <option value="ALL">All Statuses</option>
                 <option value="NOT_STARTED">Not Started</option>
@@ -264,7 +264,7 @@ export default function Users() {
               </select>
             </div>
 
-            <div className="flex items-center gap-2">
+            <div className="flex min-w-0 items-center gap-2">
               <span className="text-text-muted font-medium">Blocked:</span>
               <select
                 value={isBlocked}
@@ -272,7 +272,7 @@ export default function Users() {
                   setIsBlocked(e.target.value);
                   setPage(1);
                 }}
-                className="rounded-lg border border-border bg-surface px-2.5 py-1 text-text focus:border-primary focus:outline-none"
+                className="min-w-0 flex-1 rounded-lg border border-border bg-surface px-2.5 py-1 text-text focus:border-primary focus:outline-none"
               >
                 <option value="ALL">All Accounts</option>
                 <option value="true">Blocked Only</option>
@@ -280,7 +280,7 @@ export default function Users() {
               </select>
             </div>
 
-            <div className="flex items-center gap-2">
+            <div className="flex min-w-0 items-center gap-2">
               <span className="text-text-muted font-medium">Status:</span>
               <select
                 value={status}
@@ -288,7 +288,7 @@ export default function Users() {
                   setStatus(e.target.value);
                   setPage(1);
                 }}
-                className="rounded-lg border border-border bg-surface px-2.5 py-1 text-text focus:border-primary focus:outline-none"
+                className="min-w-0 flex-1 rounded-lg border border-border bg-surface px-2.5 py-1 text-text focus:border-primary focus:outline-none"
               >
                 <option value="ALL">All States</option>
                 <option value="APPROVED">Approved</option>
@@ -302,7 +302,7 @@ export default function Users() {
 
         {/* User Table */}
         <div className="overflow-x-auto">
-          <table className="w-full text-left text-sm">
+          <table className="min-w-[760px] w-full text-left text-sm">
             <thead>
               <tr className="border-b border-border text-xs text-text-muted bg-surface-alt/50">
                 <th className="px-5 py-3 font-semibold">Name</th>
@@ -449,7 +449,7 @@ export default function Users() {
 
         {/* Pagination Controller */}
         {totalPages > 1 && (
-          <div className="flex items-center justify-between border-t border-border p-4">
+          <div className="flex flex-col gap-3 border-t border-border p-4 sm:flex-row sm:items-center sm:justify-between">
             <span className="text-xs text-text-muted">
               Showing page <strong className="text-text">{page}</strong> of {totalPages} (Total {totalUsers} users)
             </span>
@@ -485,7 +485,7 @@ export default function Users() {
           />
 
           {/* Drawer Panel */}
-          <div className="relative z-10 w-full max-w-md bg-surface h-full flex flex-col shadow-2xl border-l border-border animate-slide-in">
+          <div className="relative z-10 h-full w-full max-w-md bg-surface flex flex-col shadow-2xl border-l border-border animate-slide-in">
             <div className="flex items-center justify-between border-b border-border px-5 py-4">
               <h3 className="text-base font-bold text-text">User Details</h3>
               <button
@@ -496,7 +496,7 @@ export default function Users() {
               </button>
             </div>
 
-            <div className="flex-1 overflow-y-auto p-6 space-y-6">
+            <div className="flex-1 overflow-y-auto p-4 sm:p-6 space-y-6">
               {/* Profile Card Summary */}
               <div className="flex flex-col items-center text-center space-y-3">
                 {selectedUser.profileImage ? (
@@ -555,7 +555,7 @@ export default function Users() {
               {/* User Bio Details */}
               <div className="space-y-4">
                 <h5 className="text-sm font-semibold border-b border-border pb-1.5 text-text">Personal Details</h5>
-                <div className="grid grid-cols-2 gap-4 text-sm">
+                <div className="grid grid-cols-1 gap-4 text-sm sm:grid-cols-2">
                   <div>
                     <span className="block text-[11px] text-text-muted">Mobile Number</span>
                     <strong className="text-text">{selectedUser.mobile}</strong>
@@ -584,7 +584,7 @@ export default function Users() {
                 <h5 className="text-sm font-semibold border-b border-border pb-1.5 text-text flex items-center gap-1.5">
                   <ShieldCheck size={16} /> Administrative Actions
                 </h5>
-                <div className="flex gap-2">
+                <div className="grid grid-cols-1 gap-2 sm:grid-cols-2">
                   {selectedUser.isBlocked ? (
                     <Button
                       variant="secondary"
@@ -640,7 +640,7 @@ export default function Users() {
                 className="w-full text-xs p-2 bg-surface-alt border border-border rounded-xl outline-none focus:border-primary text-text resize-none"
               />
             </div>
-            <div className="mt-4 flex gap-2.5">
+            <div className="mt-4 grid grid-cols-1 gap-2.5 sm:grid-cols-2">
               <Button
                 variant="secondary"
                 className="flex-1 py-1.5 text-xs"

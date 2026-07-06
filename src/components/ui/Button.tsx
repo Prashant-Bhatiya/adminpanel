@@ -34,7 +34,7 @@ export default function Button({
   return (
     <button
       className={clsx(
-        "inline-flex items-center justify-center gap-2 rounded-xl font-medium transition-colors",
+        "inline-flex min-h-9 items-center justify-center gap-2 rounded-xl text-center font-medium leading-tight transition-colors",
         "disabled:cursor-not-allowed disabled:opacity-60",
         variantClasses[variant],
         sizeClasses[size],

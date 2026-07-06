@@ -143,9 +143,9 @@ export default function Matrimonial() {
         </div>
       )}
 
-      <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
+      <div className="grid grid-cols-1 gap-5 xl:grid-cols-3">
         {/* Left Column: List of Profiles */}
-        <div className="lg:col-span-1 space-y-4">
+        <div className="xl:col-span-1 space-y-4">
           <Card padded={false}>
             <div className="border-b border-border p-4 bg-surface-alt/30">
               <h3 className="text-sm font-semibold text-text flex items-center justify-between">
@@ -208,7 +208,7 @@ export default function Matrimonial() {
         </div>
 
         {/* Right Column: Profile Detailed Viewer */}
-        <div className="lg:col-span-2">
+        <div className="xl:col-span-2">
           {selectedProfile ? (
             <Card className="h-full flex flex-col gap-6 relative">
               {detailLoading && (
@@ -230,7 +230,7 @@ export default function Matrimonial() {
                     </p>
                   </div>
                 </div>
-                <div className="flex gap-2">
+                <div className="grid grid-cols-1 gap-2 sm:flex">
                   <Button
                     variant="secondary"
                     className="py-1.5 px-3 text-xs text-danger border-danger/35 hover:bg-danger/5"
@@ -250,7 +250,7 @@ export default function Matrimonial() {
               </div>
 
               {/* Main Content Layout */}
-              <div className="grid grid-cols-1 md:grid-cols-5 gap-6 overflow-y-auto max-h-[600px] pr-2">
+              <div className="grid grid-cols-1 gap-5 overflow-y-auto max-h-[70vh] pr-0 md:grid-cols-5 sm:pr-2">
                 {/* Left Side: Photo Gallery */}
                 <div className="md:col-span-2 space-y-3">
                   <h4 className="text-xs font-bold text-text-muted uppercase tracking-wider">Photo Gallery</h4>
@@ -304,7 +304,7 @@ export default function Matrimonial() {
                   {/* Profile Metrics Grid */}
                   <div className="space-y-3">
                     <h4 className="text-xs font-bold text-text-muted uppercase tracking-wider">Attributes</h4>
-                    <div className="grid grid-cols-2 gap-3.5 bg-surface-alt/25 rounded-2xl p-4 border border-border/50 text-sm">
+                    <div className="grid grid-cols-1 gap-3.5 bg-surface-alt/25 rounded-2xl p-4 border border-border/50 text-sm sm:grid-cols-2">
                       <div className="flex items-center gap-2">
                         <Calendar size={15} className="text-text-muted" />
                         <div>
@@ -341,7 +341,7 @@ export default function Matrimonial() {
                   </div>
 
                   {/* Demographic & Financial details */}
-                  <div className="grid grid-cols-2 gap-4 text-sm border-t border-border pt-4">
+                  <div className="grid grid-cols-1 gap-4 text-sm border-t border-border pt-4 sm:grid-cols-2">
                     <div>
                       <span className="text-xs text-text-muted">Caste / Subcaste</span>
                       <p className="font-semibold text-text">
@@ -431,7 +431,7 @@ export default function Matrimonial() {
                 className="w-full text-xs p-2 bg-surface-alt border border-border rounded-xl outline-none focus:border-danger text-text resize-none"
               />
             </div>
-            <div className="mt-4 flex gap-2.5">
+            <div className="mt-4 grid grid-cols-1 gap-2.5 sm:grid-cols-2">
               <Button
                 variant="secondary"
                 className="flex-1 py-1.5 text-xs"

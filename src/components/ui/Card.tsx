@@ -11,7 +11,7 @@ export default function Card({ children, className, padded = true, ...rest }: Ca
     <div
       className={clsx(
         "rounded-2xl border border-border bg-surface shadow-card",
-        padded && "p-5",
+        padded && "p-4 sm:p-5",
         className
       )}
       {...rest}

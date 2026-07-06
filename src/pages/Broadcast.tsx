@@ -107,12 +107,12 @@ export default function Broadcast() {
             <p className="text-success/90">
               Your message was pushed successfully to the selected audience.
             </p>
-            <div className="flex gap-6 mt-3 text-xs bg-surface/50 border border-success/15 w-max px-4 py-2 rounded-xl text-text">
+            <div className="mt-3 grid w-full max-w-sm grid-cols-1 gap-3 rounded-xl border border-success/15 bg-surface/50 px-4 py-2 text-xs text-text sm:grid-cols-2">
               <div>
                 <span className="block text-[10px] text-text-muted font-medium uppercase">Targeted Users</span>
                 <strong className="text-sm font-semibold">{result.sentCount} Users</strong>
               </div>
-              <div className="border-l border-border pl-6">
+              <div className="border-t border-border pt-3 sm:border-l sm:border-t-0 sm:pl-6 sm:pt-0">
                 <span className="block text-[10px] text-text-muted font-medium uppercase">Total Devices Pushed</span>
                 <strong className="text-sm font-semibold">{result.deviceCount} Devices</strong>
               </div>
@@ -121,9 +121,9 @@ export default function Broadcast() {
         </div>
       )}
 
-      <div className="grid grid-cols-1 gap-6 lg:grid-cols-12">
+      <div className="grid grid-cols-1 gap-5 xl:grid-cols-12">
         {/* Form Settings */}
-        <div className="lg:col-span-7">
+        <div className="xl:col-span-7">
           <Card>
             <h3 className="text-sm font-bold text-text mb-4 uppercase tracking-wider flex items-center gap-1.5">
               <Megaphone size={16} className="text-primary" /> Composer Form
@@ -240,14 +240,14 @@ export default function Broadcast() {
         </div>
 
         {/* Live Device Preview */}
-        <div className="lg:col-span-5 flex flex-col justify-between">
+        <div className="xl:col-span-5 flex flex-col justify-between">
           <Card className="flex-1 flex flex-col justify-between">
             <h3 className="text-sm font-bold text-text-muted mb-4 uppercase tracking-wider flex items-center gap-1.5">
               <Sparkles size={16} className="text-accent" /> Lock Screen Preview
             </h3>
 
             {/* Simulated Phone Shell */}
-            <div className="mx-auto w-[250px] aspect-[9/18] rounded-[36px] border-[6px] border-text bg-black/95 p-3.5 shadow-2xl relative flex flex-col items-center justify-start overflow-hidden">
+            <div className="mx-auto w-full max-w-[250px] aspect-[9/18] rounded-[36px] border-[6px] border-text bg-black/95 p-3.5 shadow-2xl relative flex flex-col items-center justify-start overflow-hidden">
               {/* Speaker Notch */}
               <div className="absolute top-2 w-20 h-3.5 bg-black rounded-full z-25" />
 

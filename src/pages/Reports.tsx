@@ -142,7 +142,7 @@ export default function Reports() {
       )}
 
       {/* Filter Toolbar */}
-      <div className="flex flex-wrap gap-4 items-center justify-between bg-surface border border-border rounded-2xl p-4">
+      <div className="flex flex-col gap-4 bg-surface border border-border rounded-2xl p-4 sm:flex-row sm:items-center sm:justify-between">
         <div className="flex flex-wrap gap-3">
           <div className="flex items-center gap-2 text-sm">
             <span className="text-text-muted font-medium">Type:</span>
@@ -184,9 +184,9 @@ export default function Reports() {
         </span>
       </div>
 
-      <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
+      <div className="grid grid-cols-1 gap-5 xl:grid-cols-3">
         {/* Left Column: Report List */}
-        <div className="lg:col-span-1 space-y-4">
+        <div className="xl:col-span-1 space-y-4">
           <Card padded={false}>
             <div className="divide-y divide-border overflow-y-auto max-h-[600px]">
               {loading ? (
@@ -266,7 +266,7 @@ export default function Reports() {
         </div>
 
         {/* Right Column: Detailed Viewer & Action Panel */}
-        <div className="lg:col-span-2">
+        <div className="xl:col-span-2">
           {selectedReport ? (
             <Card className="h-full flex flex-col gap-6 relative">
               {detailLoading && (
@@ -276,7 +276,7 @@ export default function Reports() {
               )}
 
               {/* Title & Metadata */}
-              <div className="flex items-center justify-between border-b border-border pb-4">
+              <div className="flex flex-col gap-3 border-b border-border pb-4 sm:flex-row sm:items-center sm:justify-between">
                 <div>
                   <h3 className="text-lg font-bold text-text flex items-center gap-1.5">
                     <AlertOctagon className="text-danger" size={20} />
@@ -291,7 +291,7 @@ export default function Reports() {
 
               {/* Description Body */}
               <div className="space-y-4">
-                <div className="grid grid-cols-2 gap-4 bg-surface-alt/30 border border-border p-4 rounded-2xl text-sm">
+                <div className="grid grid-cols-1 gap-4 bg-surface-alt/30 border border-border p-4 rounded-2xl text-sm sm:grid-cols-2">
                   <div>
                     <span className="block text-xs text-text-muted font-medium">Reporter (Who filed)</span>
                     <strong className="text-text">{getUserName(selectedReport.reporterId)}</strong>
@@ -362,7 +362,7 @@ export default function Reports() {
                       // USER profile type
                       <div className="space-y-3 text-sm">
                         <p className="text-xs text-text-muted">Reported Account Information:</p>
-                        <div className="grid grid-cols-2 gap-2.5">
+                        <div className="grid grid-cols-1 gap-2.5 sm:grid-cols-2">
                           <div>
                             <span className="text-xs text-text-muted block">First Name</span>
                             <strong>{selectedReport.content.firstName || "N/A"}</strong>
@@ -403,7 +403,7 @@ export default function Reports() {
                   <h4 className="text-xs font-bold text-text uppercase tracking-wider mb-3 text-text-muted">
                     Administrative Action Suite
                   </h4>
-                  <div className="flex flex-wrap gap-2.5">
+                  <div className="grid grid-cols-1 gap-2.5 sm:grid-cols-2 xl:grid-cols-4">
                     <Button
                       variant="secondary"
                       className="flex-1 py-2 text-xs border-success/35 text-success hover:bg-success/5"
@@ -496,7 +496,7 @@ export default function Reports() {
                 className="w-full text-xs p-2 bg-surface-alt border border-border rounded-xl outline-none focus:border-primary text-text resize-none"
               />
             </div>
-            <div className="mt-4 flex gap-2.5">
+            <div className="mt-4 grid grid-cols-1 gap-2.5 sm:grid-cols-2">
               <Button
                 variant="secondary"
                 className="flex-1 py-1.5 text-xs"
