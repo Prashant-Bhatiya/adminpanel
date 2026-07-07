@@ -1,4 +1,4 @@
-const BASE_URL = "http://3.111.150.26:5000/api/v1";
+const BASE_URL = "/api/v1";
 
 export interface ApiResponse<T = any> {
   data: T;

@@ -209,7 +209,7 @@ export default function KycReview() {
                   const docUrl = rawUrl 
                     ? (rawUrl.startsWith("http://") || rawUrl.startsWith("https://") 
                       ? rawUrl 
-                      : `http://3.111.150.26:5000${rawUrl.startsWith("/") ? "" : "/"}${rawUrl}`)
+                      : `https://d3jjxtg7tzqh5s.cloudfront.net${rawUrl.startsWith("/") ? "" : "/"}${rawUrl}`)
                     : "";
                   return (
                     <div key={doc._id} className="border border-border rounded-2xl overflow-hidden bg-surface-alt/30">

@@ -13,5 +13,12 @@ export default defineConfig({
         port: 5173,
         strictPort: true,
         open: true,
+        proxy: {
+            "/api": {
+                target: "https://d3jjxtg7tzqh5s.cloudfront.net",
+                changeOrigin: true,
+                secure: true,
+            },
+        },
     },
 });
