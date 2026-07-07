@@ -65,11 +65,11 @@ export default function Sidebar({ mobileOpen, onMobileClose }: SidebarProps) {
             </div>
             {!sidebarCollapsed && (
               <span className="hidden truncate font-display text-[15px] font-bold tracking-tight text-sidebar-text lg:inline">
-                Northgate Admin
+                Community Admin
               </span>
             )}
             <span className="truncate font-display text-[15px] font-bold tracking-tight text-sidebar-text lg:hidden">
-              Northgate Admin
+              Community Admin
             </span>
           </Link>
 

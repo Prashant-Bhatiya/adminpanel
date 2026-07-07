@@ -44,7 +44,7 @@ export default function Login() {
           </div>
           <div className="text-center">
             <h1 className="font-display text-xl font-bold text-text">Welcome back</h1>
-            <p className="mt-1 text-sm text-text-muted">Sign in to Northgate Admin</p>
+            <p className="mt-1 text-sm text-text-muted">Sign in to Community Admin</p>
           </div>
         </div>
 
